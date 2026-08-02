@@ -10,38 +10,34 @@ export const PROVIDERS = {
     globalSkills: join(homedir(), '.claude', 'skills'),
     projectAgents: join('.claude', 'agents'),
     globalAgents: join(homedir(), '.claude', 'agents'),
-    detect: root =>
-      existsSync(join(root, '.claude')) || existsSync(join(homedir(), '.claude')),
+    // Project-scoped only — a harness folder in $HOME means it's installed on
+    // the machine, not that this project uses it. See providers detection.
+    detect: root => existsSync(join(root, '.claude')),
   },
   cursor: {
     name: 'Cursor',
     projectSkills: join('.cursor', 'skills'),
     globalSkills: join(homedir(), '.cursor', 'skills'),
-    detect: root =>
-      existsSync(join(root, '.cursor')) || existsSync(join(homedir(), '.cursor')),
+    detect: root => existsSync(join(root, '.cursor')),
   },
   codex: {
     name: 'Codex CLI',
     // Codex reads project skills from .agents/skills
     projectSkills: join('.agents', 'skills'),
     globalSkills: join(homedir(), '.agents', 'skills'),
-    detect: root =>
-      existsSync(join(root, '.agents')) ||
-      existsSync(join(homedir(), '.codex')) ||
-      existsSync(join(homedir(), '.agents')),
+    detect: root => existsSync(join(root, '.agents')),
   },
   agents: {
     name: 'Universal (.agents)',
     projectSkills: join('.agents', 'skills'),
     globalSkills: join(homedir(), '.agents', 'skills'),
-    detect: root => existsSync(join(root, '.agents')) || existsSync(join(homedir(), '.agents')),
+    detect: root => existsSync(join(root, '.agents')),
   },
   gemini: {
     name: 'Gemini CLI',
     projectSkills: join('.gemini', 'skills'),
     globalSkills: join(homedir(), '.gemini', 'skills'),
-    detect: root =>
-      existsSync(join(root, '.gemini')) || existsSync(join(homedir(), '.gemini')),
+    detect: root => existsSync(join(root, '.gemini')),
   },
   github: {
     name: 'GitHub Copilot',
@@ -53,8 +49,7 @@ export const PROVIDERS = {
     name: 'OpenCode',
     projectSkills: join('.opencode', 'skills'),
     globalSkills: join(homedir(), '.opencode', 'skills'),
-    detect: root =>
-      existsSync(join(root, '.opencode')) || existsSync(join(homedir(), '.opencode')),
+    detect: root => existsSync(join(root, '.opencode')),
   },
 };
 

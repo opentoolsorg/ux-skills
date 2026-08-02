@@ -1,6 +1,6 @@
 {
   "name": "ux-skills",
-  "description": "UX Skills — Intent design strategy (16 skills) plus AI product design and craft extensions. Installable for Claude Code, Cursor, Codex, and more.",
+  "description": "UX Skills — Intent design strategy plus AI product design and craft extensions. 33 skills, 7 agents. Installable for Claude Code, Cursor, Codex, and more.",
   "version": "1.2.0",
   "author": {
     "name": "Prince Pal"

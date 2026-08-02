@@ -43,6 +43,14 @@ npx ux-skills install -y --providers=claude,cursor,codex --scope=project --agent
 npx ux-skills update -y --providers=codex --scope=project
 ```
 
+### Global install (no per-project folders)
+
+Installs once into `~/.claude` (or the equivalent home dir for other providers) so every project on the machine gets the skills — nothing is added to individual repos.
+
+```bash
+npx ux-skills install -y --providers=claude --scope=global --agents
+```
+
 Use `npx ux-skills --help` for all options. Restart or open a new agent session after install.
 
 ### Claude Code plugin
@@ -65,7 +73,7 @@ This creates a small `UX-CONTEXT.md`: users, jobs, constraints, ethical stance, 
 | Frame | `/strategize`, `/investigate`, `/double-diamond` | Evidence-backed problem and scope |
 | Design | `/journey`, `/organize`, `/articulate` | Flow, IA, and interface language |
 | Design AI | `/ai-governors`, `/ai-inputs`, `/ai-trust-builders` | Controllable, understandable AI UX |
-| Review | `/evaluate`, `/include`, `/fortify` | Heuristics, accessibility, real-world resilience |
+| Review | `/evaluate`, `/audit`, `/include`, `/fortify` | Heuristics, accessibility, quality audit, real-world resilience |
 | Craft | `/craft`, `/cognitive-load-conversion` | Clearer, lower-friction interfaces |
 | Ship | `/specify` | Implementation-ready handoff |
 
@@ -87,7 +95,7 @@ Stuck? Use `/philosopher`. Planning metrics or experiments? Use `/measure`.
 
 ### Quality and craft
 
-`/evaluate` · `/fortify` · `/include` · `/general-design-review` · `/craft` · `/cognitive-load-conversion` · `/persuasive-ux`
+`/evaluate` · `/audit` · `/fortify` · `/include` · `/general-design-review` · `/craft` · `/cognitive-load-conversion` · `/persuasive-ux`
 
 ### Adapt, measure, handoff
 

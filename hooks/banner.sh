@@ -31,22 +31,40 @@ C_ADAPTATION=$'\033[38;5;104m'     # cool indigo
 C_MEASUREMENT=$'\033[38;5;189m'    # lightest (matches Foundation)
 C_CROSSCUTTING=$'\033[38;5;183m'   # light (matches Quality)
 C_HANDOFF=$'\033[38;5;99m'         # deep indigo
+C_AI_PRODUCT=$'\033[38;5;135m'     # orchid (AI product design pack)
 C_ORPHAN=$'\033[38;5;250m'         # neutral for unmapped skills
 
 # ── Canonical category map ──────────────────────────────────────────
-# Mirrors docs/src/lib/skills.ts — keep in sync.
+# Mirrors the groupings in cli/lib/help.mjs (GROUPS) and skills.sh.json — keep in sync.
 # Format: "skill_slug:category_key"
 CATEGORY_MAP=(
   "intent:foundation"
+  "ux-skills:foundation"
   "strategize:strategy"
   "investigate:strategy"
   "blueprint:strategy"
+  "double-diamond:strategy"
+  "empathy-mapping:strategy"
+  "ux-personas:strategy"
+  "feature-prioritization:strategy"
   "journey:experience"
   "organize:experience"
   "articulate:experience"
+  "ux-storyboard:experience"
+  "like-wish-what-if:experience"
+  "ai-governors:ai-product"
+  "ai-identifiers:ai-product"
+  "ai-inputs:ai-product"
+  "ai-trust-builders:ai-product"
+  "ai-tuners:ai-product"
+  "ai-wayfinders:ai-product"
   "evaluate:quality"
   "fortify:quality"
   "include:quality"
+  "general-design-review:quality"
+  "craft:quality"
+  "cognitive-load-conversion:quality"
+  "persuasive-ux:quality"
   "transpose:adaptation"
   "localize:adaptation"
   "measure:measurement"
@@ -56,7 +74,7 @@ CATEGORY_MAP=(
 )
 
 # Order categories appear in the frame (left to right).
-CATEGORY_ORDER=(foundation strategy experience quality adaptation measurement crosscutting handoff)
+CATEGORY_ORDER=(foundation strategy experience ai-product quality adaptation measurement crosscutting handoff)
 
 # ── Helpers ─────────────────────────────────────────────────────────
 get_category() {
@@ -80,6 +98,7 @@ get_color() {
     measurement)   printf '%s' "$C_MEASUREMENT" ;;
     crosscutting)  printf '%s' "$C_CROSSCUTTING" ;;
     handoff)       printf '%s' "$C_HANDOFF" ;;
+    ai-product)    printf '%s' "$C_AI_PRODUCT" ;;
     *)             printf '%s' "$C_ORPHAN" ;;
   esac
 }

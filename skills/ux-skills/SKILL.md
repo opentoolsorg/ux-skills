@@ -80,7 +80,7 @@ Like Impeccable's plan → build → review → refine:
 | Plan | `/strategize` · `/investigate` · `/double-diamond` | Frame problem with evidence |
 | Design | `/journey` · `/organize` · `/articulate` | Flows, IA, words |
 | AI product | `/ai-governors` · `/ai-inputs` · `/ai-trust-builders` · … | Control, trust, identity |
-| Review | `/evaluate` · `/general-design-review` · `/include` | Quality + a11y |
+| Review | `/evaluate` · `/audit` · `/general-design-review` · `/include` | Quality + a11y |
 | Craft | `/craft` · `/cognitive-load-conversion` · `/polish` via craft | Surface quality |
 | Harden | `/fortify` · `/transpose` · `/localize` | Real-world + platforms |
 | Ship | `/specify` | Engineering handoff |
@@ -101,7 +101,8 @@ What do you need?
 ├─ Structure navigation / IA        → /organize
 ├─ Write UI copy                    → /articulate
 ├─ AI feature (control/trust/input) → /ai-governors (then suite)
-├─ Audit existing UI                → /evaluate
+├─ Evaluate UX heuristic          → /evaluate
+├─ Technical quality check          → /audit
 ├─ Accessibility                    → /include
 ├─ Visual craft / AI-slop UI        → /craft
 ├─ Forms feel heavy                 → /cognitive-load-conversion

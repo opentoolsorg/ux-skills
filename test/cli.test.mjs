@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { existsSync, mkdtempSync, readFileSync, readdirSync, rmSync } from 'node:fs';
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { afterEach, test } from 'node:test';
@@ -49,6 +49,28 @@ test('installs selected skills and records install metadata', () => {
     'journey',
     'include',
   ]);
+});
+
+test('provider detection is scoped to the project, not the machine', () => {
+  // A dev machine with every harness installed globally (~/.cursor, ~/.gemini, ...)
+  // must not make every project look like it uses every harness.
+  const fakeHome = tempProject();
+  mkdirSync(join(fakeHome, '.cursor'), { recursive: true });
+  mkdirSync(join(fakeHome, '.gemini'), { recursive: true });
+
+  const project = tempProject();
+  mkdirSync(join(project, '.claude'), { recursive: true });
+
+  const output = execFileSync(process.execPath, [cli, 'install', '-y', '--scope=project'], {
+    cwd: project,
+    env: { ...process.env, HOME: fakeHome },
+    encoding: 'utf8',
+    stdio: ['ignore', 'pipe', 'pipe'],
+  });
+
+  assert.match(output, /providers=claude/);
+  assert.ok(!existsSync(join(project, '.cursor', 'skills')));
+  assert.ok(!existsSync(join(project, '.gemini', 'skills')));
 });
 
 test('rejects invalid command options', () => {

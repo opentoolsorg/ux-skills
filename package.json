@@ -46,7 +46,7 @@
   },
   "scripts": {
     "start": "node cli/bin/cli.js",
-    "test": "node --test",
+    "test": "node --test && ./hooks/check-banner-map.sh",
     "check": "npm run test && ./build.sh && npm pack --dry-run"
   },
   "publishConfig": {

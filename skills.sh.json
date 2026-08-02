@@ -20,7 +20,7 @@
     {
       "title": "Quality and craft",
       "description": "Audit usability, accessibility, resilience, cognitive load, and interface craft.",
-      "skills": ["evaluate", "fortify", "include", "general-design-review", "craft", "cognitive-load-conversion", "persuasive-ux"]
+      "skills": ["evaluate", "audit", "fortify", "include", "general-design-review", "craft", "cognitive-load-conversion", "persuasive-ux"]
     },
     {
       "title": "Adapt, measure, and hand off",
