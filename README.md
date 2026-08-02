@@ -70,36 +70,36 @@ This creates a small `UX-CONTEXT.md`: users, jobs, constraints, ethical stance, 
 
 | Stage | Commands | Outcome |
 | --- | --- | --- |
-| Frame | `/strategize`, `/investigate`, `/double-diamond` | Evidence-backed problem and scope |
-| Design | `/journey`, `/organize`, `/articulate` | Flow, IA, and interface language |
-| Design AI | `/ai-governors`, `/ai-inputs`, `/ai-trust-builders` | Controllable, understandable AI UX |
-| Review | `/evaluate`, `/audit`, `/include`, `/fortify` | Heuristics, accessibility, quality audit, real-world resilience |
-| Craft | `/craft`, `/cognitive-load-conversion` | Clearer, lower-friction interfaces |
-| Ship | `/specify` | Implementation-ready handoff |
+| Frame | `/ux-skills strategize`, `/ux-skills investigate`, `/ux-skills double-diamond` | Evidence-backed problem and scope |
+| Design | `/ux-skills journey`, `/ux-skills organize`, `/ux-skills articulate` | Flow, IA, and interface language |
+| Design AI | `/ux-skills ai-governors`, `/ux-skills ai-inputs`, `/ux-skills ai-trust-builders` | Controllable, understandable AI UX |
+| Review | `/ux-skills evaluate`, `/ux-skills audit`, `/ux-skills include`, `/ux-skills fortify` | Heuristics, accessibility, quality audit, real-world resilience |
+| Craft | `/ux-skills craft`, `/ux-skills cognitive-load-conversion` | Clearer, lower-friction interfaces |
+| Ship | `/ux-skills specify` | Implementation-ready handoff |
 
-Stuck? Use `/philosopher`. Planning metrics or experiments? Use `/measure`.
+Stuck? Use `/ux-skills philosopher`. Planning metrics or experiments? Use `/ux-skills measure`.
 
 ## Skill directory
 
 ### Start and strategy
 
-`/ux-skills` · `/intent` · `/strategize` · `/investigate` · `/blueprint` · `/double-diamond` · `/empathy-mapping` · `/ux-personas` · `/feature-prioritization`
+`/ux-skills` · `/ux-skills intent` · `/ux-skills strategize` · `/ux-skills investigate` · `/ux-skills blueprint` · `/ux-skills double-diamond` · `/ux-skills empathy-mapping` · `/ux-skills ux-personas` · `/ux-skills feature-prioritization`
 
 ### Experience design
 
-`/journey` · `/organize` · `/articulate` · `/ux-storyboard` · `/like-wish-what-if`
+`/ux-skills journey` · `/ux-skills organize` · `/ux-skills articulate` · `/ux-skills ux-storyboard` · `/ux-skills like-wish-what-if`
 
 ### AI product design
 
-`/ai-governors` · `/ai-identifiers` · `/ai-inputs` · `/ai-trust-builders` · `/ai-tuners` · `/ai-wayfinders`
+`/ux-skills ai-governors` · `/ux-skills ai-identifiers` · `/ux-skills ai-inputs` · `/ux-skills ai-trust-builders` · `/ux-skills ai-tuners` · `/ux-skills ai-wayfinders`
 
 ### Quality and craft
 
-`/evaluate` · `/audit` · `/fortify` · `/include` · `/general-design-review` · `/craft` · `/cognitive-load-conversion` · `/persuasive-ux`
+`/ux-skills evaluate` · `/ux-skills audit` · `/ux-skills fortify` · `/ux-skills include` · `/ux-skills general-design-review` · `/ux-skills craft` · `/ux-skills cognitive-load-conversion` · `/ux-skills persuasive-ux`
 
 ### Adapt, measure, handoff
 
-`/transpose` · `/localize` · `/measure` · `/philosopher` · `/storytelling` · `/specify`
+`/ux-skills transpose` · `/ux-skills localize` · `/ux-skills measure` · `/ux-skills philosopher` · `/ux-skills storytelling` · `/ux-skills specify`
 
 Run `npx ux-skills help` for descriptions and suggested session order.
 
@@ -137,6 +137,6 @@ npx ux-skills link --source=. --providers=claude,cursor,codex
 
 ## Credits and license
 
-Strategy foundation from [ghaida/intent](https://github.com/ghaida/intent) (CC0). AI product and craft extensions credit [tommyjepsen/awesome-ux-skills](https://github.com/tommyjepsen/awesome-ux-skills). See [CREDITS.md](CREDITS.md).
+Strategy foundation from [ghaida/ux-skills intent](https://github.com/ghaida/ux-skills intent) (CC0). AI product and craft extensions credit [tommyjepsen/awesome-ux-skills](https://github.com/tommyjepsen/awesome-ux-skills). See [CREDITS.md](CREDITS.md).
 
 Released under [CC0 1.0](LICENSE).

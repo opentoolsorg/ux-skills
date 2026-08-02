@@ -315,7 +315,7 @@ export async function runInstall(args, { mode = 'install' } = {}) {
   console.log('  Next:');
   console.log('    1. Reload your AI harness (restart / new session)');
   console.log('    2. Run  /ux-skills init   to write project UX context');
-  console.log('    3. Try  /intent   or   /journey <flow>   or   /ai-governors');
+  console.log('    3. Try  /ux-skills intent   or   /ux-skills journey <flow>   or   /ux-skills ai-governors');
   console.log('');
   console.log('  List skills:  npx ux-skills help');
   console.log('');

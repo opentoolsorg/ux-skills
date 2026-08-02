@@ -175,7 +175,7 @@ intent_content=$(awk '
     BEGIN { count = 0; printing = 0 }
     /^---$/ { count++; if (count == 2) { printing = 1; next } }
     printing { print }
-' "$SKILLS_DIR/intent/SKILL.md")
+' "$SKILLS_DIR/ux-skills/commands/intent.md")
 
 cat > "$GITHUB_DIR/copilot-instructions.md" << ENDOFCOPILOT
 # UX Skills
@@ -190,7 +190,7 @@ for skill_dir in "$SKILLS_DIR"/*/; do
     skill_name=$(basename "$skill_dir")
     skill_file="$skill_dir/SKILL.md"
 
-    if [ ! -f "$skill_file" ] || [ "$skill_name" = "intent" ]; then
+    if [ ! -f "$skill_file" ]; then
         continue
     fi
 

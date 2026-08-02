@@ -19,6 +19,13 @@ Then reload your agent.
 
 ## Commands
 
+### `/ux-skills <command>`
+
+All specific UX skills are now subcommands of `/ux-skills` (e.g., `/ux-skills evaluate`, `/ux-skills journey`, `/ux-skills audit`).
+When the user runs a subcommand, you MUST read the file `commands/<command>.md` in the same directory as this SKILL.md file, and execute the task according to the instructions in that file.
+
+For example, for `/ux-skills audit`, read `commands/audit.md` and follow its instructions.
+
 ### `/ux-skills` or `/ux-skills help`
 
 Recommend the next skill from what the user is trying to do. Print a short decision tree and wait for their pick.
@@ -61,7 +68,7 @@ If `UX-CONTEXT.md` exists, summarize it in 5 bullets and suggest the highest-lev
 
 ### `/ux-skills route <plain English>`
 
-Map a free-text ask to a skill and either invoke that skill's protocol or tell the user to run `/skill-name`.
+Map a free-text ask to a subcommand and then read its file in `commands/<command>.md` and execute it.
 
 ---
 
@@ -72,13 +79,13 @@ Like Impeccable's plan → build → review → refine:
 | Phase | Command | Role |
 |-------|---------|------|
 | Context | `/ux-skills init` | Project UX context file |
-| Plan | `/strategize` · `/investigate` · `/double-diamond` | Frame problem with evidence |
-| Design | `/journey` · `/organize` · `/articulate` | Flows, IA, words |
-| AI product | `/ai-governors` · `/ai-inputs` · `/ai-trust-builders` · … | Control, trust, identity |
-| Review | `/evaluate` · `/general-design-review` · `/include` | Quality + a11y |
-| Craft | `/craft` · `/cognitive-load-conversion` · `/polish` via craft | Surface quality |
-| Harden | `/fortify` · `/transpose` · `/localize` | Real-world + platforms |
-| Ship | `/specify` | Engineering handoff |
+| Plan | `/ux-skills strategize` · `/ux-skills investigate` | Frame problem with evidence |
+| Design | `/ux-skills journey` · `/ux-skills organize` | Flows, IA, words |
+| AI product | `/ux-skills ai-governors` · `/ux-skills ai-inputs` | Control, trust, identity |
+| Review | `/ux-skills evaluate` · `/ux-skills audit` | Quality + a11y |
+| Craft | `/ux-skills craft` · `/ux-skills cognitive-load-conversion` | Surface quality |
+| Harden | `/ux-skills fortify` · `/ux-skills transpose` | Real-world + platforms |
+| Ship | `/ux-skills specify` | Engineering handoff |
 
 Cross-cutting anytime: `/philosopher`, `/storytelling`, `/measure`.
 
@@ -90,19 +97,20 @@ Cross-cutting anytime: `/philosopher`, `/storytelling`, `/measure`.
 What do you need?
 │
 ├─ First time on this repo          → /ux-skills init
-├─ Don't know the problem           → /strategize
-├─ Need research plan / synthesis   → /investigate
-├─ Design a user flow               → /journey
-├─ Structure navigation / IA        → /organize
-├─ Write UI copy                    → /articulate
-├─ AI feature (control/trust/input) → /ai-governors (then suite)
-├─ Audit existing UI                → /evaluate
-├─ Accessibility                    → /include
-├─ Visual craft / AI-slop UI        → /craft
-├─ Forms feel heavy                 → /cognitive-load-conversion
-├─ Edge cases / empty / error       → /fortify
-├─ Ready for eng                    → /specify
-└─ Stuck                            → /philosopher
+├─ Don't know the problem           → /ux-skills strategize
+├─ Need research plan / synthesis   → /ux-skills investigate
+├─ Design a user flow               → /ux-skills journey
+├─ Structure navigation / IA        → /ux-skills organize
+├─ Write UI copy                    → /ux-skills articulate
+├─ AI feature (control/trust/input) → /ux-skills ai-governors
+├─ Evaluate UX heuristic          → /ux-skills evaluate
+├─ Technical quality check          → /ux-skills audit
+├─ Accessibility                    → /ux-skills include
+├─ Visual craft / AI-slop UI        → /ux-skills craft
+├─ Forms feel heavy                 → /ux-skills cognitive-load-conversion
+├─ Edge cases / empty / error       → /ux-skills fortify
+├─ Ready for eng                    → /ux-skills specify
+└─ Stuck                            → /ux-skills philosopher
 ```
 
 ---

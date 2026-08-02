@@ -3,29 +3,9 @@
   "notGrouped": "bottom",
   "groupings": [
     {
-      "title": "Start and strategy",
-      "description": "Set context, frame product problems, and plan evidence-led UX work.",
-      "skills": ["ux-skills", "intent", "strategize", "investigate", "blueprint", "double-diamond", "empathy-mapping", "ux-personas", "feature-prioritization"]
-    },
-    {
-      "title": "Experience design",
-      "description": "Design journeys, information architecture, interface language, and scenarios.",
-      "skills": ["journey", "organize", "articulate", "ux-storyboard", "like-wish-what-if"]
-    },
-    {
-      "title": "AI product design",
-      "description": "Create controllable, understandable, trustworthy AI experiences.",
-      "skills": ["ai-governors", "ai-identifiers", "ai-inputs", "ai-trust-builders", "ai-tuners", "ai-wayfinders"]
-    },
-    {
-      "title": "Quality and craft",
-      "description": "Audit usability, accessibility, resilience, cognitive load, and interface craft.",
-      "skills": ["evaluate", "audit", "fortify", "include", "general-design-review", "craft", "cognitive-load-conversion", "persuasive-ux"]
-    },
-    {
-      "title": "Adapt, measure, and hand off",
-      "description": "Localize, adapt, measure, think, and prepare implementation-ready work.",
-      "skills": ["transpose", "localize", "measure", "philosopher", "storytelling", "specify"]
+      "title": "UX Skills",
+      "description": "Product UX strategy, AI product design, accessibility, and craft skills.",
+      "skills": ["ux-skills"]
     }
   ]
 }

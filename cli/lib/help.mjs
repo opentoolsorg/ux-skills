@@ -65,16 +65,20 @@ const GROUPS = {
 };
 
 export async function showHelp() {
-  const names = existsSync(SKILLS_SRC)
-    ? readdirSync(SKILLS_SRC, { withFileTypes: true })
-        .filter(d => d.isDirectory())
-        .map(d => d.name)
-        .sort()
-    : [];
+  const commandsDir = join(SKILLS_SRC, 'ux-skills', 'commands');
+  let names = ['ux-skills'];
+  if (existsSync(commandsDir)) {
+    names = names.concat(
+      readdirSync(commandsDir)
+        .filter(f => f.endsWith('.md'))
+        .map(f => f.replace('.md', ''))
+    );
+  }
+  names.sort();
 
   const desc = {};
   for (const name of names) {
-    const p = join(SKILLS_SRC, name, 'SKILL.md');
+    const p = name === 'ux-skills' ? join(SKILLS_SRC, 'ux-skills', 'SKILL.md') : join(SKILLS_SRC, 'ux-skills', 'commands', `${name}.md`);
     if (!existsSync(p)) continue;
     desc[name] = frontmatterDescription(readFileSync(p, 'utf8'));
   }
@@ -88,12 +92,12 @@ export async function showHelp() {
   Repo:     https://github.com/princepal9120/ux-skills
 
   Session path (like Impeccable docs):
-    1. /ux-skills init     write UX context for the project
-    2. /strategize         frame the problem
-    3. /journey            design the experience
-    4. /evaluate           review quality
-    5. /specify            hand off to engineering
-    AI product path: /ai-governors → /ai-inputs → /ai-trust-builders
+    1. /ux-skills init               write UX context for the project
+    2. /ux-skills strategize         frame the problem
+    3. /ux-skills journey            design the experience
+    4. /ux-skills evaluate           review quality
+    5. /ux-skills specify            hand off to engineering
+    AI product path: /ux-skills ai-governors → /ux-skills ai-inputs → /ux-skills ai-trust-builders
 `);
 
   const pad = (s, n) => s + ' '.repeat(Math.max(0, n - s.length));
@@ -119,5 +123,5 @@ export async function showHelp() {
     console.log('');
   }
 
-  console.log(`  ${names.length} skills total. After install, invoke with /skill-name in your agent.\n`);
+  console.log(`  ${names.length} skills total. After install, invoke with /ux-skills <subcommand> in your agent.\n`);
 }

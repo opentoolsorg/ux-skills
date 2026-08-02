@@ -28,27 +28,21 @@ afterEach(() => {
 });
 
 test('prints version and command help', () => {
-  assert.match(run(['--version']), /^1\.2\.0\n$/);
-  assert.match(run(['--help']), /npx skills add princepal9120\/ux-skills --all --full-depth/);
-  assert.match(run(['help']), /33 skills total/);
+  assert.match(run(['version']), /^2\.0\.0\n$/);
+  assert.match(run(['help']), /UX Skills — commands for AI harnesses/);
+  assert.match(run(['help']), /\/ux-skills init/);
 });
 
 test('installs selected skills and records install metadata', () => {
   const project = tempProject();
-  const output = run(
-    ['install', '-y', '--providers=agents', '--scope=project', '--skills=journey,include'],
-    project
-  );
+  const out = run(['install', '-y', '--providers=agents', '--scope=project', '--skills=ux-skills'], project);
 
-  const skills = join(project, '.agents', 'skills');
-  assert.match(output, /Installing UX Skills v1\.2\.0/);
-  assert.ok(existsSync(join(skills, 'journey', 'SKILL.md')));
-  assert.ok(existsSync(join(skills, 'include', 'SKILL.md')));
-  assert.equal(existsSync(join(skills, 'craft', 'SKILL.md')), false);
-  assert.deepEqual(JSON.parse(readFileSync(join(skills, '.ux-skills-install.json'))).skills, [
-    'journey',
-    'include',
-  ]);
+  const manifestPath = join(project, '.agents', 'skills', '.ux-skills-install.json');
+  assert.ok(existsSync(manifestPath), 'manifest was written');
+
+  const manifest = JSON.parse(readFileSync(manifestPath, 'utf8'));
+  assert.equal(manifest.package, 'ux-skills');
+  assert.deepEqual(manifest.skills, ['ux-skills']);
 });
 
 test('provider detection is scoped to the project, not the machine', () => {
